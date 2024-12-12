@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
 body{
@@ -10,42 +10,74 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #e3f2fd;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #ffffff;
 }
 
 .wrapper {
-    width: 65vmin;
+    width: 70vmin;
     height: 70vmin;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 5px;
-    background: #293447;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+    background: #1c1c1c;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .game-details{
-    color: #b8c6dc;
-    font-size: 1.2rem;
+    color: #e0e0e0;
+    font-size: 1rem;
     font-weight: 500;
-    padding: 20px 27px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    background: #333;
+    border-bottom: 3px solid #444;
 }
 
-.play-board{
+.play-board {
+    flex: 1;
+    background: #212121;
+    display: grid;
+    grid-template: repeat(20, 1fr) / repeat(20, 1fr);
+    gap: 1px;
+}
+
+.play-board div{
     width: 100%;
     height: 100%;
-    background: #212837;
-    display: grid;
-    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    background: #2a2a2a;
 }
 
 .play-board .food{
-    background: #ff003d;
+    background: #ff5733;
+    border-radius: 50%;
 }
 
 .play-board .head{
-    background: #60cbff;
+    background: #4caf50;
+    border-radius: 3px;
 }
 
+.play-board .body {
+    background: #81c784;
+    border-radius: 3px;
+}
+
+.play-board .head, .play-board .body {
+    transition: background-color 0.2s transform 0.2s;
+}
+
+@media (max-width: 768px){
+    .wrapper {
+        width: 90vmin;
+        height: 90vmin;
+    }
+
+    .game-details {
+        font-size: 0.8rem;
+    }
+}
 
